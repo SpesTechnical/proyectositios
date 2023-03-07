@@ -20,7 +20,7 @@
     <?php include_once('./nav.php'); ?>
     <?php include_once('./sidemenu.php'); ?>
 
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/graficos.js"></script>
 </body>
 
 </html>

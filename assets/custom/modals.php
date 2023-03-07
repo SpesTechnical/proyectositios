@@ -7,68 +7,67 @@
             </div>
 
             <div class="modal-body text-center">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group mb-2">
-                            <input type="text" class="form-control inputsM" placeholder="Su Nombre(s)" />
+                <form id="registroUsuarios">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control inputsM" placeholder="Su Nombre(s)" id="Nombre" name="Nombre" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control inputsM" placeholder="Su Apellido(s)" id="Apellido" name="Apellido" />
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group mb-2">
-                            <input type="text" class="form-control inputsM" placeholder="Su Apellido(s)" />
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group mb-2">
-                            <input type="text" class="form-control inputsM" placeholder="Número de Teléfono" />
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group mb-2">
-                            <input type="mail" class="form-control inputsM" placeholder="Correo electrónico @" />
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group mb-2">
-                            <input type="text" class="form-control inputsM" placeholder="Nombre de Usuario*" />
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group mb-2">
-                            <input type="mail" class="form-control inputsM" placeholder="Contraseña*" />
-                        </div>
-                    </div>
-               
-                    <center>
                     <br>
-                        <input type="checkbox" class="form-check-input" style="background-color: #ff7bac;" /><strong style="color: #6390f8"> Acepto los Terminos de Servicios y Politica de Privacidad.</strong>
-                    </center>
-                </div>
 
-                <hr>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control inputsM" placeholder="Nombre de Usuario*" id="Usuario" name="Usuario" />
+                            </div>
+                        </div>
 
-                <div class="form-group mb-3">
-                    <center>
-                        <button class="btnmodificadoRegistro" style="padding: 7px 51px;">Registrar</button>
-                    </center>
-                </div>
+                        <div class="col-sm-6">
+                            <div class="form-group mb-2">
+                                <input type="password" class="form-control inputsM" placeholder="Contraseña*" id="Contrasena" name="Contrasena" />
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group mb-2">
+                                <input type="number" class="form-control inputsM" placeholder="Número de Teléfono" id="Telefono" name="Telefono" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group mb-2">
+                                <input type="mail" class="form-control inputsM" placeholder="Correo electrónico @" id="Correo" name="Correo" />
+                            </div>
+                        </div>
+
+                        <center>
+                            <br>
+                            <input type="checkbox" id="Terminos" name="Terminos" class="form-check-input" style="background-color: #ff7bac;" /><strong style="color: #6390f8"> Acepto los Terminos de Servicios y Politica de Privacidad.</strong>
+                        </center>
+                    </div>
+
+                    <hr>
+                    <div class="form-group mb-3">
+                        <center>
+                            <button type="submit" id="btnRegistroU" name="btnRegistroU" class="btnmodificadoRegistro" style="padding: 7px 51px;">Registrar</button>
+                        </center>
+                    </div>
+                </form>
             </div>
-
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-
         </div>
     </div>
 </div>
-
 
 <div class="modal" id="recuperaContra">
     <div class="modal-dialog modal-md modal-dialog-centered">

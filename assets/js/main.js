@@ -208,17 +208,87 @@
   });
 
   /**
+  * Registro
+  */
+  $('#btnRegistroU').on('click', function (e) {
+    e.preventDefault();
+
+    let datos = $('#registroUsuarios').serializeArray();
+    datos.push({ name: 'accion', value: 'registroUsuario' });
+
+    let nombre = $('#Nombre').val();
+    let apellido = $('#Apellido').val();
+    let usuario = $('#Usuario').val();
+    let pass = $('#Contrasena').val();
+    let telefono = $('#Telefono').val();
+    let correo = $('#Correo').val();
+    let terminos = $('#Terminos');
+
+    if (terminos.is(":checked")){
+      if(nombre && apellido && usuario && pass && telefono && correo){
+        $.ajax({
+          type: "POST",
+          url: "./usuario/claseUSU.php",
+          data: datos,
+          success: function (response) {
+            let res = JSON.parse(response);
+
+            if(res.response==true){
+              Swal.fire("Exito!", "Se creo su usuario correctamente.", "success");
+              setTimeout(function(){
+                window.location.href = "index.php";
+              },2000);
+            }else if(res.response==false){
+              Swal.fire("Error!", "Se presento un error.", "error");
+            }
+          }
+        });
+      }else{
+        Swal.fire("Advertencia!", "Todos los campos son obligatorios.", "warning");
+      }
+    }else{
+      Swal.fire("Advertencia!", "Se deben aceptar los Terminos de Servicio y la Politica de Privacidad.", "warning");
+    }
+  });
+
+
+  /**
+  * Login
+  */
+  $('#btnlogin').on('click', function (e) {
+    e.preventDefault();
+
+    let user = $("#usuario").val();
+    let pass = $("#contrasena").val();
+    let accion = "loginUser";
+
+    $.ajax({
+      url: "logini.php",
+      type: "POST",
+      data: {
+        user,
+        pass,
+        accion
+      },
+      success: function (response) {
+        $('#loginUsuarios').trigger("reset");
+        $('#alertaLogin').html(response);
+      }
+    });
+  });
+
+  /**
    * Send Email
    */
   $("#btnEnviaCorreo").on("click", function (e) {
     e.preventDefault();
-    var nombreC = $("#nombreC").val();
-    var correoC = $("#correoC").val();
-    var mensajeC = $("#mensajeC").val();
-    var accion = "enviaSugerencia";
-    var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    var valido = expReg.test(correoC);
-    
+    let nombreC = $("#nombreC").val();
+    let correoC = $("#correoC").val();
+    let mensajeC = $("#mensajeC").val();
+    let accion = "enviaSugerencia";
+    let expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    let valido = expReg.test(correoC);
+
     if (mensajeC != "" && correoC != "") {
       if (valido == true) {
         $.ajax({
@@ -233,14 +303,14 @@
           success: function () {
             $("#formInfo").find("textarea").val("");
             $("#formInfo").find("input:text").val("");
-            Swal.fire("Exito!","Gracias por tu aporte, de ser necesario te contactarémos al correo brindado anteriormente.","success");
+            Swal.fire("Exito!", "Gracias por tu aporte, de ser necesario te contactarémos al correo brindado anteriormente.", "success");
           },
         });
       } else {
-        Swal.fire("Advertencia!","Ingrese una dirección de correo electrónico @ válida.","warning");
+        Swal.fire("Advertencia!", "Ingrese una dirección de correo electrónico @ válida.", "warning");
       }
     } else {
-      Swal.fire("Error!","El formulario esta vacío, por favor complételo.","error");
+      Swal.fire("Error!", "El formulario esta vacío, por favor complételo.", "error");
     }
   });
 
@@ -248,4 +318,5 @@
    * Initiate Pure Counter
    */
   new PureCounter();
+
 })();
