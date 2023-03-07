@@ -102,7 +102,7 @@
             <div class="count-box">
               <i class="fa-solid fa-users"></i>
               <span data-purecounter-start="0" data-purecounter-end="4732" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Usuarios</p>
+              <p>Usuarios Registrados</p>
             </div>
           </div>
 
@@ -110,7 +110,7 @@
             <div class="count-box">
               <i class="fa-solid fa-heart"></i>
               <span data-purecounter-start="0" data-purecounter-end="11289" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Likes</p>
+              <p>Likes Dados</p>
             </div>
           </div>
 
@@ -118,7 +118,7 @@
             <div class="count-box">
               <i class="fa-regular fa-calendar-heart"></i>
               <span data-purecounter-start="0" data-purecounter-end="5223" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Citas</p>
+              <p>Citas Concretadas</p>
             </div>
           </div>
 
@@ -126,7 +126,7 @@
             <div class="count-box">
               <i class="fa-solid fa-fire-flame-curved"></i>
               <span data-purecounter-start="0" data-purecounter-end="9890" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Suspiros</p>
+              <p>Suspiros Dados</p>
             </div>
           </div>
 
